@@ -30,7 +30,7 @@ with st.sidebar:
 
 # CONNECTING TO THE MONGODB ATLAS DATA BASE AND CREATING A DATABASE
 
-url = "mongodb+srv://Maxwell:naveenmaxvel@cluster0.83j93c5.mongodb.net/?retryWrites=true&w=majority"
+url = st.secret["mongodb+srv://Maxwell:naveenmaxvel@cluster0.83j93c5.mongodb.net/?retryWrites=true&w=majority"]
 client = MongoClient(url)
 
 db = client['yt_project']
@@ -46,7 +46,7 @@ mydb = sql.connect(host='localhost',
 cursor = mydb.cursor(buffered=True)
 
 # GOOGLE API_KEY FOR FETCHING THE DATA
-api_key = "AIzaSyBpDipJPtTcQqIqnBiJrtfrn291uvpXMXY"
+api_key = st.secret["AIzaSyBpDipJPtTcQqIqnBiJrtfrn291uvpXMXY"]
 
 # BUILDING CONNECTION WITH GOOGLE YOUTUBE
 youtube = build('youtube', 'v3', developerKey=api_key)
